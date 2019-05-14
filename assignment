@@ -1,0 +1,24 @@
+1. makeCacheMatrix: This function creates a special "matrix" object that can cache its inverse.
+makeCacheMatrix <- function(a = matrix())
+    allinv <- NULL
+    fix <- function(z)
+        a <<- z
+        allinv <<- NULL
+    take <- function() a
+    fixInverse <- function(solveMatrix) 
+    allinv <<- solveMatrix
+    takeInverse <- function() 
+    allinv
+    list(fix = fix, take = take, fixInverse = fixInverse, getInverse = getInverse)
+
+
+2. cacheSolve: 
+cacheSolve <- function(z, ...)
+  allinv <- z$takeInverse()
+  if(!is.null(allinv)
+    message("cached data")
+    return(allinv)
+  data <- z$get()
+  allinv <- solve(data)
+  z$setInverse(allinv)
+ allinv      
